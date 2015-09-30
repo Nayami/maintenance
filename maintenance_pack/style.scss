@@ -1,0 +1,109 @@
+@import "lithe/LitheRegular-Regular.css";
+@import "loader";
+
+$mainColor: #c28d49;
+
+$lithe : "LitheRegular-Regular";
+$lato : 'Lato', sans-serif;
+
+@mixin gradient($color1 : #ccc, $color2 : #fff) {
+	background-color  : $color2;
+	background        : -webkit-gradient(linear, left 0%, left 100%, from($color1), to($color2));
+	background        : -webkit-linear-gradient(top, $color1, 0%, $color2, 100%);
+	background        : -moz-linear-gradient(top, $color1 0%, $color2 100%);
+	background        : -ms-linear-gradient(top, $color1 0%, $color2 100%);
+	background        : linear-gradient(to bottom, $color1 0%, $color2 100%);
+	background-repeat : repeat-x;
+	filter            : progid:DXImageTransform.Microsoft.gradient(startColorstr='#ie-hex-str($color1)', startColorstr='#ie-hex-str($color2)', GradientType=0);
+}
+
+
+
+body {
+	//background-image: url("bodybg.jpg");
+	background-image: url("bodybg-1.jpg");
+	font-family: $lithe;
+	color : #fff;
+}
+#brandimage {
+	margin-top : 8%;
+	max-width : 500px;
+	margin-bottom : 40px;
+}
+h1 {
+	font-size : 50px;
+}
+p {
+	font-size : 20px;
+	font-family : $lato;
+	font-weight : 300;
+}
+input[type="email"] {
+	background-color: transparent;
+	border : none;
+	color : #fff !important;
+	font-size : 18px;
+	margin-top : 5px;
+	outline:  none;
+	box-shadow: none;
+	&:focus{
+		box-shadow: none;
+	}
+	/*Mobile*/
+	@media (max-width : 767px) {
+		display: block !important;
+		float : none !important;
+		width : 100% !important;
+		clear: both !important;
+	}
+}
+.input-group-btn, .input-group-btn button  {
+	/*Mobile*/
+	@media (max-width : 767px) {
+		display: block !important;
+		float : none !important;
+		width : 100% !important;
+		clear: both !important;
+	}
+}
+
+
+.input-group {
+	background-color: rgba(45, 75, 108, 0.2);
+	padding : 5px;
+	border-radius: 5px;
+	border-color : transparent;
+	box-shadow: inset 1px 1px 4px rgba(0, 0, 0, 0.78);
+	/*Mobile*/
+	@media (max-width : 767px) {
+		display: block !important;
+		float : none !important;
+		width : 100% !important;
+		clear: both !important;
+	}
+}
+
+#submit-trigger {
+	padding: 10px 16px;
+	color : rgba(0, 0, 0, 0.54);
+	border-radius: 4px !important;
+	border-top-color: #becbf6;
+	border-bottom-color: #000;
+	border-right-color: #000;
+	font-weight : 900;
+	font-family : $lato;
+	@include gradient(lighten($mainColor, 10%), $mainColor);
+
+	&:hover{
+		@include gradient($mainColor, lighten($mainColor, 10%));
+	}
+}
+
+.alert {
+	width: 50%;
+	height: 50px;
+	position: absolute;
+	left: 50%;
+	margin-left: -25%;
+	top: 40%;
+}
