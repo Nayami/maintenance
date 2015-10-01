@@ -52,8 +52,8 @@ jQuery(document).ready(function($) {
 		})
 	});
 
-	var focusBlurInput = function(){
-		var inputHandler = $('#subscribe-email'),
+	var focusBlurInput = function(selector){
+		var inputHandler = $(selector),
 			pattern = /^[a-z]+@[a-z]+\.[a-z]{2,6}$/i,
 			baseValue = inputHandler.attr('data-placeholder');
 
@@ -68,6 +68,6 @@ jQuery(document).ready(function($) {
 			}
 		});
 	};
-	focusBlurInput();
+	focusBlurInput('#subscribe-email');
 
 });
